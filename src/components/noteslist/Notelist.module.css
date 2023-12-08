@@ -10,13 +10,13 @@
     position: fixed;
     top: 86vh;
     left: 21vw;
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background: #16008B;
     text-align: center;
     border: none;
-    font-size: 60px;
+    font-size: 58px;
     color: white;
     cursor: pointer;
 }
@@ -28,10 +28,41 @@
     font-size: 17px;
     padding-left: 15px;
     margin-left: 50px;
+    margin-top: 5px;
 }
 .inputlabel{
     margin-top: 5px;
-    font-size: 23px;
+    font-size: 22px;
     font-family: var(--roboto);
     font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0.001em;
 }
+.colorOptions {
+    display: flex;
+    margin-left: 30px ;
+    margin-top: 13px;
+  }
+  
+  .colorOption {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  
+  .activeColor {
+    border:  2px solid rgb(112, 111, 111);
+  }
+  .createBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: #001F8B ;
+    margin-top: 60px;
+    margin-left: 10px;
+  }
