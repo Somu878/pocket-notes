@@ -18,4 +18,20 @@
     border: none;
     font-size: 60px;
     color: white;
+    cursor: pointer;
+}
+.grpInput{
+    width: 330px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #cccccc;
+    font-size: 17px;
+    padding-left: 15px;
+    margin-left: 50px;
+}
+.inputlabel{
+    margin-top: 5px;
+    font-size: 23px;
+    font-family: var(--roboto);
+    font-weight: 500;
 }
