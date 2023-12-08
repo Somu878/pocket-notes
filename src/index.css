@@ -11,3 +11,10 @@
 body{
   overflow: hidden;
 }
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(205, 204, 204);
+  border-radius: 10px;
+}

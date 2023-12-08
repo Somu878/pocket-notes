@@ -10,8 +10,8 @@
     position: fixed;
     top: 86vh;
     left: 21vw;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background: #16008B;
     text-align: center;
@@ -65,4 +65,9 @@
     background-color: #001F8B ;
     margin-top: 60px;
     margin-left: 10px;
+    cursor: pointer;
+  }
+  .listContainer{
+    overflow: scroll;
+    overflow-x: hidden;
   }
