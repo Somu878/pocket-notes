@@ -2,7 +2,7 @@ import React from 'react'
 import bannerbg from '../../assets/image-removebg-preview 1.png'
 function Banner() {
   return (
-    <div style={{background:'#DAE5F5',width:'70vw',height:'100vh',marginTop:'-6px',cursor:'default'}}>
+    <div className='banner' style={{background:'#DAE5F5',width:'70vw',height:'100vh',marginTop:'-6px',cursor:'default'}}>
       <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',paddingTop:'150px'}}>
         <img style={{width:'550px',height:'270px'}} src={bannerbg} alt="banner image" />
         <p style={{fontFamily:'var(--roboto)',fontSize:'40px',fontWeight:'bold',marginTop:'-15px'}}>Pocket Notes</p>

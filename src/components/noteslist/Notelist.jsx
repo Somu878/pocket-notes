@@ -5,23 +5,21 @@ import Modal from 'react-modal';
 import { v4 as uuidv4 } from 'uuid'
 const customStyles = {
   content: {
-   width: '540px',
-   height:'255px',
-   marginTop:'200px',
-   marginLeft:'400px',
-   paddingLeft:'40px',
-   paddingTop:'0px'
-  }
+    width: '70%', 
+    maxWidth:'60vw',
+    maxWidth: '535px', 
+    height: 'auto',
+    maxHeight:'30vh' ,
+    margin: '10vw auto',
+    paddingTop: '-15px'
+  },
 };
-
 
 function Notelist() {
   const [modalIsOpen, setIsOpen] =useState(false);
   const [grpName,setgrpName]= useState('')
   const [selectedColor, setSelectedColor] = useState(null);
   const [Group,setGroup] =useState([])
-  const col = 'pink'
-  const name = 'hello world'
   if (!localStorage.getItem('GroupList')) {
     const initialGrpList = [];
     localStorage.setItem('GroupList', JSON.stringify(initialGrpList));
@@ -47,7 +45,7 @@ function Notelist() {
     }
   }
   return (
-    <div style={{width:'30vw',height:'100vh',display:'flex',flexDirection:'column'}}>
+    <div style={{minWidth:'30vw',width: '100%',height:'100vh',display:'flex',flexDirection:'column'}}>
         <p className={styles.title}>Pocket Notes</p>
         <div className={styles.listContainer} >
           {
@@ -57,7 +55,7 @@ function Notelist() {
           }
         </div>
         <Modal style={customStyles} isOpen={modalIsOpen} onRequestClose={()=>setIsOpen(false)}>
-        <p style={{fontFamily:'var(--roboto)',fontSize:'27px',fontWeight:'500'}}>Create New Group</p>
+        <p style={{fontFamily:'var(--roboto)',fontSize:'1.5rem',fontWeight:'500'}}>Create New Group</p>
         <div style={{display:'flex'}}>
           <p className={styles.inputlabel}>Group Name</p>
           <input type="text" spellCheck='false' className={styles.grpInput} placeholder='Enter Group Name' onChange={(e)=>setgrpName(e.target.value)} />
