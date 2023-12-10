@@ -5,13 +5,14 @@ import Modal from 'react-modal';
 import { v4 as uuidv4 } from 'uuid'
 const customStyles = {
   content: {
-    width: '70%', 
-    maxWidth:'60vw',
-    maxWidth: '535px', 
-    height: 'auto',
-    maxHeight:'30vh' ,
-    margin: '10vw auto',
-    paddingTop: '-15px'
+    
+    overflowY:'hidden',
+    minWidth:'280px',
+    maxWidth: '39vw', 
+    maxHeight: '30vh',
+    minHeight:'23vh' ,
+    margin: '10vw auto ',
+    paddingTop: '-1px'
   },
 };
 
@@ -20,6 +21,7 @@ function Notelist() {
   const [grpName,setgrpName]= useState('')
   const [selectedColor, setSelectedColor] = useState(null);
   const [Group,setGroup] =useState([])
+  const [Currentgroup,setCurrentgroup] = useState(null)
   if (!localStorage.getItem('GroupList')) {
     const initialGrpList = [];
     localStorage.setItem('GroupList', JSON.stringify(initialGrpList));
@@ -31,6 +33,12 @@ function Notelist() {
   const handleCreateGroup=()=>{
     if(grpName,selectedColor){
       const existingGroups = JSON.parse(localStorage.getItem('GroupList'))
+      const isGroupExists = existingGroups.some(group => group.name.toLowerCase() === grpName.toLowerCase());
+    if (isGroupExists) {
+      alert('Group with the same name already exists. Please choose a different name.');
+      setgrpName('')
+      return;
+    }
       const newGroup ={
         id:uuidv4(),
         name:grpName,
@@ -45,17 +53,17 @@ function Notelist() {
     }
   }
   return (
-    <div style={{minWidth:'30vw',width: '100%',height:'100vh',display:'flex',flexDirection:'column'}}>
+    <div style={{minWidth:'28vw',width: '100%',height:'100vh',display:'flex',flexDirection:'column'}}>
         <p className={styles.title}>Pocket Notes</p>
         <div className={styles.listContainer} >
           {
             grpList.map((item)=>(
-              <List key={item.id} grpName={item.name} grpColour={item.color}/>
+              <List key={item.id} grpName={item.name} grpColour={item.color} grpId={item.id} selectedGroup={Currentgroup} setselectedGroup={setCurrentgroup}/>
             ))
           }
         </div>
-        <Modal style={customStyles} isOpen={modalIsOpen} onRequestClose={()=>setIsOpen(false)}>
-        <p style={{fontFamily:'var(--roboto)',fontSize:'1.5rem',fontWeight:'500'}}>Create New Group</p>
+        <Modal style={customStyles} isOpen={modalIsOpen} onRequestClose={()=>setIsOpen(false)} ariaHideApp={false}>
+        <p className={styles.Modaltitle}>Create New Group</p>
         <div style={{display:'flex'}}>
           <p className={styles.inputlabel}>Group Name</p>
           <input type="text" spellCheck='false' className={styles.grpInput} placeholder='Enter Group Name' onChange={(e)=>setgrpName(e.target.value)} />

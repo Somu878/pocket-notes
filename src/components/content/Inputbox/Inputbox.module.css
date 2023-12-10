@@ -1,0 +1,15 @@
+.inputbox{
+   padding: 30px;
+}
+
+textarea {
+   width: 67.5vw;
+   height: 23vh;
+   padding: 10px;
+   padding-left: 13px;
+   resize: none;
+   border-radius: 17px;
+   font-size: 35px;
+   outline: none;
+ }
+ 

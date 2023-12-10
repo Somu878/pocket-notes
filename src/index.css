@@ -13,11 +13,12 @@ body{
 }
 ::-webkit-scrollbar{
   width: 12px;
-  height: 12px;
+  
 }
 ::-webkit-scrollbar-thumb{
   background-color: rgb(205, 204, 204);
   border-radius: 10px;
+  min-height: 20px; 
 }
 
 @media all and (max-width: 765px){

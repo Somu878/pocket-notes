@@ -1,25 +1,26 @@
-import React from 'react'
-import styles from './List.module.css'
-function List({grpColour,grpName}) {
-    const Getinitials=(grpname)=>{
-        const words = grpname.trim().split(' ')
-        if (words.length>=2){
-            const firstInitial = words[0][0].toUpperCase()
-            const secondInitial = words[1][0].toUpperCase()
-            return `${firstInitial}${secondInitial}`
-        }
-        else if(words.length<2){
-            return words[0].slice(0,2).toUpperCase()
-        }
-        return 'NA'
-    }
-    const InitalsofGrpName= Getinitials(grpName)
+import React, { useState } from "react";
+import styles from "./List.module.css";
+import { useNavigate, Link } from "react-router-dom";
+import Getinitials from "../../helper functions/Getinitials";
+function List({ grpColour, grpName, grpId, selectedGroup, setselectedGroup }) {
+  const navigate = useNavigate();
+  const InitalsofGrpName = Getinitials(grpName);
   return (
-    <div className={styles.list}>
-       <div className={styles.grpicon} style={{background:grpColour}}>{InitalsofGrpName}</div>
-        <div className={styles.listgrpname}>{grpName}</div>
+    <div
+      className={`${styles.list} ${
+        selectedGroup === grpId ? styles.selected : ""
+      }`}
+      onClick={() => {
+        setselectedGroup(grpId);
+        navigate(`/content/${grpId}`);
+      }}
+    >
+      <div className={styles.grpicon} style={{ background: grpColour }}>
+        {InitalsofGrpName}
+      </div>
+      <div className={styles.listgrpname}>{grpName}</div>
     </div>
-  )
+  );
 }
 
-export default List
+export default List;
