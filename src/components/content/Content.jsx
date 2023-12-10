@@ -23,7 +23,7 @@ function Content() {
             <div className={styles.grpTitleText}>{selectedGroup.name}</div>
         </div>
         <div className={styles.notesContent}>Actual content</div>
-        <div className={styles.Inputbox}><Inputbox/></div>
+        <div className={styles.Inputbox}><Inputbox groupID={grpId}/></div>
     </div>
   )
 }

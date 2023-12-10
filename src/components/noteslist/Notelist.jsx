@@ -43,6 +43,7 @@ function Notelist() {
         id:uuidv4(),
         name:grpName,
         color:selectedColor,
+        content:[]
       }
       const updatedGroups = [...existingGroups,newGroup]
       localStorage.setItem('GroupList',JSON.stringify(updatedGroups))

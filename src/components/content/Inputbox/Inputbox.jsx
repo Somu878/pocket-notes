@@ -2,30 +2,47 @@ import React, { useState } from 'react';
 import styles from './Inputbox.module.css';
 import submitbutton from '../../../assets/Send.svg';
 
-function Inputbox() {
+function Inputbox({groupID}) {
   const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked(!isClicked);
+  const [Newdata,setNewdata] = useState('')
+  
+  // const existingGroup = JSON.parse(localStorage.getItem('GroupList'))
+  const handleTextareaChange=(e)=>{
+    e.preventDefault();   
+    const inputValue = e.target.value
+    setNewdata(inputValue)
+    setIsClicked(Boolean(inputValue))
+  }
+  const handleSubmit = () => {
+    if (Newdata) {
+      const existingGroup = JSON.parse(localStorage.getItem('GroupList'));
+      const selectedGrp = existingGroup.find((group) => group.id === groupID);
+      selectedGrp.content.push(Newdata);
+      localStorage.setItem('GroupList', JSON.stringify(existingGroup));
+      setNewdata('');
+      
+      setIsClicked(false);
+    }
   };
+  
 
   return (
     <div className={styles.inputbox}>
-      <textarea name="NotesInput" cols={50} spellCheck='false' placeholder='Write your notes here'>
+      <textarea  name="NotesInput" cols={50} onChange={handleTextareaChange} spellCheck='false' placeholder='Write your notes here'>
       </textarea>
       <img
         src={submitbutton}
         style={{
           width: '60px',
           height: '60px',
-          position: 'absolute',
+          position: 'fixed',
           top: '90vh',
           right: '70px',
           cursor: 'pointer',
-          // filter: isClicked ? 'brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(5026%) hue-rotate(224deg) brightness(100%) contrast(113%)': 'none',
+          filter: isClicked ? 'brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(5026%) hue-rotate(224deg) brightness(100%) contrast(113%)': 'none',
         }}
         alt=""
-        onClick={handleClick}
+        onClick={handleSubmit}
       />
     </div>
   );
