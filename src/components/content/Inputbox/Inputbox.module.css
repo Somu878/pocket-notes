@@ -11,5 +11,8 @@ textarea {
    border-radius: 17px;
    font-size: 35px;
    outline: none;
+   font-family: var(--roboto);
+   overflow: scroll;
  }
+
  
