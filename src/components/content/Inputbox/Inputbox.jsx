@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styles from './Inputbox.module.css';
 import submitbutton from '../../../assets/Send.svg';
-
-function Inputbox({groupID}) {
+import GetTime from '../../../helper functions/GetTime'
+import GetDate from '../../../helper functions/GetDate'
+function Inputbox({groupID,onUpdate}) {
   const [isClicked, setIsClicked] = useState(false);
   const [Newdata,setNewdata] = useState('')
-  
-  // const existingGroup = JSON.parse(localStorage.getItem('GroupList'))
+  // const [date,setDate]= useState(GetDate())
+  // const [time,setTime]= useState(GetTime())
   const handleTextareaChange=(e)=>{
     e.preventDefault();   
     const inputValue = e.target.value
@@ -17,8 +18,13 @@ function Inputbox({groupID}) {
     if (Newdata) {
       const existingGroup = JSON.parse(localStorage.getItem('GroupList'));
       const selectedGrp = existingGroup.find((group) => group.id === groupID);
-      selectedGrp.content.push(Newdata);
+      selectedGrp.content.push({
+        text: Newdata,
+        time: GetTime(),
+        date: GetDate(),
+      });
       localStorage.setItem('GroupList', JSON.stringify(existingGroup));
+      onUpdate(existingGroup)
       setNewdata('');
       setIsClicked(false);
     }
@@ -30,8 +36,8 @@ function Inputbox({groupID}) {
       <img
         src={submitbutton}
         style={{
-          width: '50px',
-          height: '50px',
+          width: '40px',
+          height: '40px',
           position: 'fixed',
           top: '89vh',
           right: '60px',

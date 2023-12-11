@@ -17,14 +17,24 @@ function Content() {
         return <div>Error:Group not Exists</div>;
     }
     const IconText = Getinitials(selectedGroup.name)
+    const handleUpdateNotes = (updatedGroups) => {
+        const updatedGroup = updatedGroups.find((group) => group.id === grpId);
+        setSelectedGroup(updatedGroup);
+      };
   return (
     <div className={styles.Content}>
         <div className={styles.grpTitle}>
             <div className={styles.grpIcon} style={{background:selectedGroup.color}} >{IconText}</div>
             <div className={styles.grpTitleText}>{selectedGroup.name}</div>
         </div>
-        <div className={styles.notesContent}><GuiNotes/></div>
-        <div className={styles.Inputbox}><Inputbox groupID={grpId}/></div>
+        <div className={styles.notesContent}>
+            {
+               selectedGroup.content.map((item)=>(
+                <GuiNotes text={item.text} time={item.time} date={item.date}/>
+               ))
+            }
+        </div>
+        <div className={styles.Inputbox}><Inputbox groupID={grpId} onUpdate={handleUpdateNotes}/></div>
     </div>
   )
 }

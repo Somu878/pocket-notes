@@ -3,9 +3,9 @@
   align-items: center;
   margin: 5px;
   height: 75px;
-  width: 400px;
+  min-width: 400px;
   border-radius: 18px;
-  background-color: white;
+ 
   cursor: default;
 }
 

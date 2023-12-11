@@ -6,7 +6,7 @@ import Content from '../components/content/Content';
 function Home() {
   return (
     <div style={{display:'flex'}}>
-      <div className='notesListContainer'> <Notelist/></div>
+       <Notelist/>
     <div>
       <Routes>
         <Route path="/" element={<Banner/>} />

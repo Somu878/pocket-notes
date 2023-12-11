@@ -54,7 +54,7 @@ function Notelist() {
     }
   }
   return (
-    <div style={{minWidth:'20vw',maxWidth:'30vw',height:'100vh',display:'flex',flexDirection:'column'}}>
+    <div style={{maxWidth:'30vw',width:'100%',height:'100vh',display:'flex',flexDirection:'column'}}>
         <p className={styles.title}>Pocket Notes</p>
         <div className={styles.listContainer} >
           {
