@@ -6,7 +6,7 @@ function GuiNotes({text,time,date}) {
     // const date = GetDate()
   return (
     <div style={{width:'64.5vw', height:"auto",background:'white',padding:'10px',margin:'20px',borderRadius:'4px'}}>{text}
-    <div style={{marginLeft:'52vw'}}><span>{date}</span> <span style={{marginLeft:'10px'}}>{time}</span></div></div>
+    <div style={{marginLeft:'52vw',fontWeight:'500',fontSize:'14px'}}><span>{date}</span>  •<span style={{marginLeft:'5px'}}>{time}</span></div></div>
   )
 }
 
