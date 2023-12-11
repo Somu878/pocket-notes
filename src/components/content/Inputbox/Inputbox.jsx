@@ -20,24 +20,21 @@ function Inputbox({groupID}) {
       selectedGrp.content.push(Newdata);
       localStorage.setItem('GroupList', JSON.stringify(existingGroup));
       setNewdata('');
-      
       setIsClicked(false);
     }
   };
-  
-
   return (
     <div className={styles.inputbox}>
-      <textarea  name="NotesInput" cols={50} onChange={handleTextareaChange} spellCheck='false' placeholder='Write your notes here'>
+      <textarea  name="NotesInput"  value={Newdata} cols={40} onChange={handleTextareaChange} spellCheck='false' placeholder='Write your notes here'>
       </textarea>
       <img
         src={submitbutton}
         style={{
-          width: '60px',
-          height: '60px',
+          width: '50px',
+          height: '50px',
           position: 'fixed',
-          top: '90vh',
-          right: '70px',
+          top: '89vh',
+          right: '60px',
           cursor: 'pointer',
           filter: isClicked ? 'brightness(0) saturate(100%) invert(11%) sepia(55%) saturate(5026%) hue-rotate(224deg) brightness(100%) contrast(113%)': 'none',
         }}

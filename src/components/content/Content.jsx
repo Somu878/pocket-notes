@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import styles from './Content.module.css'
 import Getinitials from '../../helper functions/Getinitials'
 import Inputbox from './Inputbox/Inputbox'
+import GuiNotes from './GuiNotes'
 
 function Content() {
     const list = JSON.parse(localStorage.getItem('GroupList'))
@@ -22,7 +23,7 @@ function Content() {
             <div className={styles.grpIcon} style={{background:selectedGroup.color}} >{IconText}</div>
             <div className={styles.grpTitleText}>{selectedGroup.name}</div>
         </div>
-        <div className={styles.notesContent}>Actual content</div>
+        <div className={styles.notesContent}><GuiNotes/></div>
         <div className={styles.Inputbox}><Inputbox groupID={grpId}/></div>
     </div>
   )

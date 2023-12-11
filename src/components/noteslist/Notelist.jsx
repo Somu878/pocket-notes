@@ -7,12 +7,12 @@ const customStyles = {
   content: {
     
     overflowY:'hidden',
-    minWidth:'280px',
+    minWidth:'260px',
     maxWidth: '39vw', 
-    maxHeight: '30vh',
-    minHeight:'23vh' ,
+    minHeight:'10px',
+    maxHeight: '35vh',
     margin: '10vw auto ',
-    paddingTop: '-1px'
+    paddingTop:'10px'
   },
 };
 
@@ -54,7 +54,7 @@ function Notelist() {
     }
   }
   return (
-    <div style={{minWidth:'28vw',width: '100%',height:'100vh',display:'flex',flexDirection:'column'}}>
+    <div style={{minWidth:'20vw',maxWidth:'30vw',height:'100vh',display:'flex',flexDirection:'column'}}>
         <p className={styles.title}>Pocket Notes</p>
         <div className={styles.listContainer} >
           {
@@ -81,8 +81,9 @@ function Notelist() {
               ></span>
             ))}
           </div>
+          </div>  
           <button className={styles.createBtn} onClick={()=>handleCreateGroup()}>Create</button>
-        </div>
+       
         </Modal>
         <button className={styles.addBtn} onClick={()=>setIsOpen(true)}>+</button>
     </div>

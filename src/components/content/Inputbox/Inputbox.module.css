@@ -3,13 +3,14 @@
 }
 
 textarea {
-   width: 67.5vw;
+   width: 65vw;
    height: 23vh;
-   padding: 10px;
-   padding-left: 13px;
+   /* padding: 10px; */
+   padding-left: 20px;
    resize: none;
    border-radius: 17px;
-   font-size: 35px;
+ 
+   font-size: 25px;
    outline: none;
    font-family: var(--roboto);
    overflow: scroll;
