@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './pages/Home'
-import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route, Link } from "react-router-dom";
+import ContentPage from './pages/contentPage';
 function App() {
 
   return (
     <>
-    <BrowserRouter> <Home/></BrowserRouter>
+   <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path='/content/:grpId' element={<ContentPage/>}/>
+   </Routes>
     </>
   )
 }

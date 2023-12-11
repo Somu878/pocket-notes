@@ -1,9 +1,9 @@
 .Content{
-    width: 71vw;
+    width: 72vw;
     background: #DAE5F5;
     overflow: hidden;
+    height: 100%;
     height: 100vh;
-    margin-top: -8px;
     display: flex;
     flex-direction: column;
 }
@@ -24,14 +24,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 500;
     color: white;
 }
 .grpTitleText{
     margin-top: 20px;
     margin-left: 30px;
-    font-size: 27px;
+    font-size: 23px;
     font-weight: 500;
     color: white;
 }

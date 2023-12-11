@@ -27,7 +27,7 @@ function Content() {
             <div className={styles.grpIcon} style={{background:selectedGroup.color}} >{IconText}</div>
             <div className={styles.grpTitleText}>{selectedGroup.name}</div>
         </div>
-        <div className={styles.notesContent} style={{overflow:'auto'}}>
+        <div className={styles.notesContent} style={{overflowY:'scroll'}}>
             {
                selectedGroup.content.map((item)=>(
                 <GuiNotes text={item.text} time={item.time} date={item.date}/>
