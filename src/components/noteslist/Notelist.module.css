@@ -68,7 +68,7 @@
   .createBtn{
     width: 150px;
     height: 35px;
-    border-radius: 13px;
+    border-radius: 10px;
     border: none;
     color: white;
     background-color: #001F8B ;
@@ -97,14 +97,14 @@
         margin-left: 45px;
     }
    .createBtn{
-    margin-left: 50px;
-    margin-top: 25px;
+    margin-left: 65px;
+    margin-top: 20px;
     width: 40vw;
     height: 30px;
    }
    .inputlabel{
-    font-size: 12px;
-    line-height: 25px;
+    font-size: 13px;
+    line-height: 30px;
     margin-top: 7px;
     padding-left: 0;
    }

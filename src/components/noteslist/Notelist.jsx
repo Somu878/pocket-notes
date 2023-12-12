@@ -7,9 +7,8 @@ const customStyles = {
   content: {
     
     overflowY:'hidden',
-    minWidth:'260px',
+    minWidth:'280px',
     maxWidth: '39vw', 
-    minHeight:'10px',
     maxHeight: '35vh',
     margin: '10vw auto ',
     paddingTop:'10px'
