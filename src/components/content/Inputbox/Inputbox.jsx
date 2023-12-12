@@ -3,6 +3,7 @@ import styles from './Inputbox.module.css';
 import submitbutton from '../../../assets/Send.svg';
 import GetTime from '../../../helper functions/GetTime'
 import GetDate from '../../../helper functions/GetDate'
+import { v4 as uuidv4 } from 'uuid'
 function Inputbox({groupID,onUpdate}) {
   const [isClicked, setIsClicked] = useState(false);
   const [Newdata,setNewdata] = useState('')
@@ -19,6 +20,7 @@ function Inputbox({groupID,onUpdate}) {
       const existingGroup = JSON.parse(localStorage.getItem('GroupList'));
       const selectedGrp = existingGroup.find((group) => group.name === groupID);
       selectedGrp.content.push({
+        id:uuidv4(),
         text: Newdata,
         time: GetTime(),
         date: GetDate(),

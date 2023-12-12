@@ -33,7 +33,7 @@ function Content() {
         <div className={styles.notesContent} style={{overflowY:'scroll'}}>
             {
                selectedGroup.content.map((item)=>(
-                <GuiNotes text={item.text} time={item.time} date={item.date}/>
+                <GuiNotes key={item.id} text={item.text} time={item.time} date={item.date}/>
                ))
             }
         </div>
