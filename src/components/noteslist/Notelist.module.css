@@ -85,6 +85,9 @@
   @media (max-width:767px){
     .addBtn{
         margin-left: 52vw;
+        font-size: 50px;
+        width: 65px;
+    height: 65px;
     }
     .listContainer{
         width: 100vw;
