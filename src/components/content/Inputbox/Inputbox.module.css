@@ -1,21 +1,48 @@
 .inputbox{
-   padding: 25px;
-   padding-right: 35px;
+   padding: 20px;
 }
-
+.submitBtn{
+   width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 90vh;
+    right: 55px;
+    cursor: pointer;
+}
 textarea {
    width: 65vw;
    width: 100%;
-   height: 25vh;
+   height: 23vh;
    box-sizing: border-box;
    padding: 10px;
    padding-left: 20px;
    resize: none;
    border-radius: 17px;
-    font-size: 23px;
+    font-size: 22px;
    outline: none;
    font-family: var(--roboto);
    overflow: scroll;
+ }
+
+ @media screen and (max-width:767px){
+   .inputbox{
+      padding: 18px;
+      margin: 0;
+   }
+   .submitBtn{
+      width: 30px;
+    height: 30px;
+    top: 91vh;
+    left: 84vw;
+   }
+   textarea{
+      width: 92vw;
+      height: 20vh;
+      padding: 10px;
+      padding-left: 15px;
+      font-size: 18px;
+      border-radius: 12px;
+   }
  }
 
  

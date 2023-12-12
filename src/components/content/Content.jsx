@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom'
 import styles from './Content.module.css'
 import Getinitials from '../../helper functions/Getinitials'
 import Inputbox from './Inputbox/Inputbox'
-import GuiNotes from './GuiNotes'
-
+import GuiNotes from './Gui Notes/GuiNotes'
+import { useNavigate } from 'react-router-dom'
 function Content() {
+    const navigate = useNavigate()
     const list = JSON.parse(localStorage.getItem('GroupList'))
     const { grpId } = useParams()
     const [selectedGroup, setSelectedGroup] = useState(null);
@@ -24,6 +25,7 @@ function Content() {
   return (
     <div className={styles.Content}>
         <div className={styles.grpTitle}>
+            <div className={styles.backtohome} onClick={()=>navigate('/')}></div>
             <div className={styles.grpIcon} style={{background:selectedGroup.color}} >{IconText}</div>
             <div className={styles.grpTitleText}>{selectedGroup.name}</div>
         </div>

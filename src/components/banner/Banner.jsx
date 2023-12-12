@@ -1,8 +1,8 @@
 import React from 'react'
-import bannerbg from '..//../assets/banner.png'
+import bannerbg from '..//../assets/banner.svg'
 function Banner() {
   return (
-    <div className='banner' style={{background:'#DAE5F5',width:'72vw',height:'100%',height:'100vh',marginTop:'-10px',cursor:'default'}}>
+    <div className='banner' style={{background:'#DAE5F5',width:'72vw',height:'100%',height:'100vh',marginTop:'2px',cursor:'default'}}>
       <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',paddingTop:'170px'}}>
         <img style={{width:'40vw',height:'30vh'}} src={bannerbg} alt="banner image" />
         <p style={{fontFamily:'var(--roboto)',fontSize:'40px',fontWeight:'bold',marginTop:'-15px'}}>Pocket Notes</p>

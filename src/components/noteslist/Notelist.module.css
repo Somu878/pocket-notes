@@ -82,17 +82,16 @@
     overflow-x: hidden;
   }
 
-  @media (max-width:770px){
+  @media (max-width:767px){
     .addBtn{
         margin-left: 52vw;
     }
     .listContainer{
-        width: 100%;
-        min-width: 90vw;
-        margin-left: -2px;
+        width: 100vw;
+        overflow: scroll;
     }
     .title{
-        margin-left: 25vw;
+        margin-left: 45px;
     }
    .createBtn{
     margin-left: 50px;
