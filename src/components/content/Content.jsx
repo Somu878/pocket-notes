@@ -8,10 +8,11 @@ import { useNavigate } from 'react-router-dom'
 function Content() {
     const navigate = useNavigate()
     const list = JSON.parse(localStorage.getItem('GroupList'))
-    const { grpId } = useParams()
+    const { grpName } = useParams()
+    const grpId = decodeURIComponent(grpName)
     const [selectedGroup, setSelectedGroup] = useState(null);
     useEffect(()=>{
-        const Group = list.find(item => item.id === grpId);
+        const Group = list.find(item => item.name === grpId);
         setSelectedGroup(Group)
     },[grpId])
     if (!selectedGroup) {
@@ -19,7 +20,7 @@ function Content() {
     }
     const IconText = Getinitials(selectedGroup.name)
     const handleUpdateNotes = (updatedGroups) => {
-        const updatedGroup = updatedGroups.find((group) => group.id === grpId);
+        const updatedGroup = updatedGroups.find((group) => group.name === grpId);
         setSelectedGroup(updatedGroup);
       };
   return (

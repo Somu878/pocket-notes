@@ -59,7 +59,7 @@ function Notelist() {
         <div className={styles.listContainer} >
           {
             grpList.map((item)=>(
-              <List key={item.id} grpName={item.name} grpColour={item.color} grpId={item.id} selectedGroup={Currentgroup} setselectedGroup={setCurrentgroup}/>
+              <List key={item.id} grpName={item.name} grpColour={item.color}  selectedGroup={Currentgroup} setselectedGroup={setCurrentgroup}/>
             ))
           }
         </div>

@@ -17,7 +17,7 @@ function Inputbox({groupID,onUpdate}) {
   const handleSubmit = () => {
     if (Newdata) {
       const existingGroup = JSON.parse(localStorage.getItem('GroupList'));
-      const selectedGrp = existingGroup.find((group) => group.id === groupID);
+      const selectedGrp = existingGroup.find((group) => group.name === groupID);
       selectedGrp.content.push({
         text: Newdata,
         time: GetTime(),
