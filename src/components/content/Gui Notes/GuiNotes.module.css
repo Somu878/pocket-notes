@@ -1,27 +1,27 @@
-.GuiContainer{
-    width: 66vw;
-    height: auto;
-    background: white;
-    padding: 7px;
-    margin: 20px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-family: var(--roboto);
-    font-weight: 450;
+.GuiContainer {
+  width: 66vw;
+  height: auto;
+  background: white;
+  padding: 7px;
+  margin: 20px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: var(--roboto);
+  font-weight: 450;
 }
-.GuiSpan{
-    margin-left: 54vw;
-    margin-top: 5px;
-    font-weight: 500;
-    font-size: 14px;
+.GuiSpan {
+  margin-left: 54vw;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-@media screen and (max-width:767px){
-    .GuiContainer{
-        width: 85vw;
-        margin: 12px;
-    }
-    .GuiSpan{
-        margin-left: 45vw;
-    }
+@media screen and (max-width: 767px) {
+  .GuiContainer {
+    width: 85vw;
+    margin: 12px;
+  }
+  .GuiSpan {
+    margin-left: 45vw;
+  }
 }
